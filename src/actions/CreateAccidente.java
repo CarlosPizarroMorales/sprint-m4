@@ -19,9 +19,14 @@ public class CreateAccidente {
 	 * de esta clase.
 	 */
 	public static Accidente create(String rutAsociado) {
-        Show.guide("createAccidente");
+        Show.guide("createGeneral");
         
-        rutCliente = Common.doIt("createRutCliente", true, "rut");
+        if(rutAsociado.length() != 0) {
+        	rutCliente = rutAsociado;
+        } else {
+        	rutCliente = Common.doIt("createAccidenteRutCliente", true, "rut");
+        }
+        
         fechaAccidente = LocalDate.parse(Common.doIt("createAccidenteFecha", true, "fecha"), Validate.FECHA_FORMAT);
         horaAccidente = Common.doIt("createAccidenteHora", true, "hora");
         lugarAccidente = Common.doIt("createAccidenteLugar", true, 10, 50);

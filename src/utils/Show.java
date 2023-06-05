@@ -25,6 +25,10 @@ public abstract class Show {
 	private static final String CREATE_CLIENTE_DIRECCION =		"\nDIRECCIÓN________________no obligatorio, hasta 70 caracteres____________";
 	private static final String CREATE_CLIENTE_COMUNA = 			"\nCOMUNA___________________no obligatorio, hasta 50 caracteres____________";
 	private static final String CREATE_CLIENTE_EDAD = 			"\nEDAD_____________________no obligatorio, máximo: 150____________________";
+	private static final String CLIENTE_CREATE_ACCIDENTE =		"\n¿Desea crear un accidente asociado a su perfil en este momento? S/N";
+	private static final String CLIENTE_CREATE_VISITA =			"\nEl sistema require que registre al menos una visita asociada a este cliente.";
+	private static final String CLIENTE_CREATE_REVISION =			"\nEl sistema require que registre al menos una revisión para la visita recién creada";
+	private static final String CLIENTE_CREATE_CAPACITACION =	"\n¿Desea crear una capacitación asociada a su perfil en este momento? S/N";
 	private static final String CREATE_PROFESIONAL_TITULO = 		"\nTÍTULO___________________obligatorio, entre 10 y 50 caracteres__________";
 	private static final String CREATE_PROFESIONAL_INGRESO =		"\nFECHA DE INGRESO_________no obligatorio, formato DD/MM/AAAA)____________";
 	private static final String CREATE_ADMINISTRATIVO_AREA = 		"\nAREA_____________________obligatorio, entre 5 y 20 caracteres___________";
@@ -103,8 +107,20 @@ public abstract class Show {
 			case "createFechaNac":									// Usuario Fecha Nacimiento
 				System.out.println(CREATE_FECHA_NAC);				
 				break;
+			case "clienteCreacionAccidente":						// Consuta si cliente desea crear un Accidente
+				System.out.println(CLIENTE_CREATE_ACCIDENTE);		
+				break;
+			case "clienteCreacionVisita":							// Solicita a Cliente creacion de Visita
+				System.out.println(CLIENTE_CREATE_VISITA);		
+				break;
+			case "clienteCreacionRevision":							// Solicita a Cliente creación de Revision
+				System.out.println(CLIENTE_CREATE_REVISION);		
+				break;
+			case "clienteCreacionCapacitacion":						// Consulta a cliente si desea crear Capacitacion
+				System.out.println(CLIENTE_CREATE_CAPACITACION);		
+				break;
 			case "createClienteTelefono":							// Cliente Telefono
-				System.out.println(CREATE_CLIENTE_TELEFONO );		
+				System.out.println(CREATE_CLIENTE_TELEFONO);		
 				break;
 			case "createClienteAfp":								// Cliente AFP
 				System.out.println(CREATE_CLIENTE_AFP);			

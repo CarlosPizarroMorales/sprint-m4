@@ -50,6 +50,12 @@ public class Contenedor {
 		}
 	}
 	
+	/*
+	 * Comprueba si un rut cualquiera está registrado
+	 * TODO MEJORA: se puede refactorizar para el factor común
+	 * con searchClient, aunque requeriría un segundo
+	 * parámetro para conocer quien invoca el método. 
+	 */
 	public boolean searchRutExists(String rutUser) {
 		boolean isFounded = false;
 		

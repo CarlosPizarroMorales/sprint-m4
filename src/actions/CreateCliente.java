@@ -39,56 +39,71 @@ public class CreateCliente {
 	private static String run;
 	private static String telefono;
 	private static String afp;
-	private static String saludStr;					// temporal para parsear sistSalud
+	private static String saludStr;					// intermedia para parsear sistSalud
 	private static int sistSalud;
 	private static String direccion;
 	private static String comuna;
-	private static String edadStr; 					// temporal para parsear edad
+	private static String edadStr; 					// intermedia para parsear edad
 	private static int edad;
-
+	private static Scanner scAc = new Scanner(System.in);
+	private static String respuesta;
+	private static Accidente acc;
+	private static Visita vis;
+	private static Revision rev;
 	
 	public static void create() {
-		// 10 campos + capacitaciones + accidente + visita + revisión(es)
 		Show.guide("createGeneral");
 		
-		nombres = Common.doIt("createNombres", true, 5, 30);
-		apellidos = Common.doIt("createApellidos", true, 5, 30);
-		fechaNac = LocalDate.parse(Common.doIt("createFechaNac", true, "fecha"), Validate.FECHA_FORMAT);
-		run = Common.doIt("createRut", true, "run");
-		
-		/// validar rut unico
-		boolean isFounded = validateCliente(run);
+		run = Common.doIt("createRut", true, "run");		
 		/*
 		 * Si el rut ingresado no existe o no corresponde a un usuario de tipo
 		 * Cliente, entonces se informa al usuario y se termina la ejecución. 
 		 */
+		boolean isFounded = validateCliente(run);
 		if(isFounded) {
 			Show.guide("clienteYaExiste");
 			return;								
 		}
 		isFounded = false;
 		
+		nombres = Common.doIt("createNombres", true, 5, 30);
+		apellidos = Common.doIt("createApellidos", true, 5, 30);
+		fechaNac = LocalDate.parse(Common.doIt("createFechaNac", true, "fecha"), Validate.FECHA_FORMAT);
 		telefono = Common.doIt("createClienteTelefono", false, "telefono");
 		afp = Common.doIt("createClienteAfp", false, 4, 30);
 		saludStr =  Common.doIt("createClienteSalud", false, "salud");
 		sistSalud = (saludStr.length() != 0) ? Integer.parseInt(saludStr) : 0; 
 		direccion = Common.doIt("createClienteDireccion",false, 0, 70);
 		comuna = Common.doIt("createClienteComuna", false, 0, 50);
-		edadStr = Common.doIt("createClienteEdad", true, "edad");
-		edad = (edadStr.length() != 0) ? Integer.parseInt(edadStr) : 0;
+		edad = Integer.parseInt(Common.doIt("createClienteEdad", true, "edad"));
 		
-		// Lógica de creación de accidente
-		//CreateAccidente accidente;
-		String rutAccidente = Common.doIt("createAccidenteRutCliente", true, "rut");
-        LocalDate fechaAccidente = LocalDate.parse(Common.doIt("createAccidenteFecha", false, "fecha"), Validate.FECHA_FORMAT);
-        String horaAccidente = Common.doIt("createAccidenteHora", false, "hora");
-        String lugarAccidente = Common.doIt("createAccidenteLugar", true, 10, 50);
-        String origenAccidente = Common.doIt("createAccidenteOrigen", false, 1, 100);
-        String consecuenciasAccidente = Common.doIt("createAccidenteConsecuencias", false, 1, 100);
-        Accidente accidente = new Accidente(rutAccidente, fechaAccidente, horaAccidente, lugarAccidente, origenAccidente, consecuenciasAccidente);
+		// Creación de accidente
+		Show.guide("clienteCreateAccidente"); // Pregunta si quiere agregar accidente
 		
-        Accidente a = new Accidente();
-		// Lógica de creacion de capacitacion
+		String r = "n";
+		do {
+			try {
+				respuesta = scAc.next();
+				r = respuesta.toLowerCase();
+				if (r.equals("s")) {
+					System.out.println("...Entrando en la creación de Accidente\n");
+					acc = CreateAccidente.create(run);
+				} else if (r.equals("n")){
+					break; 
+				} else {
+					throw new UnsupportedOperationException();
+				}
+			} catch (Exception e) {								// captura las excepciones del parseo de
+				System.out.println("Opción inválida");			// Integer y de la validación de rango
+			}
+
+		} while (!r.equals("s") && r.equals("n"));
+	
+		Show.guide("clienteCreateVisita");
+		vis = CreateVisita.create(run);
+//		
+//        Accidente a = new Accidente();
+//		// Lógica de creacion de capacitacion
 		//CreateCapacitacion capacitacion;
 		rutCliente = Common.doIt("createRut", true, "rut");
 		isFounded = validateCliente(rutCliente);
