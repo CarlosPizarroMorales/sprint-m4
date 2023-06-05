@@ -2,11 +2,11 @@
 
 
 ## Integrantes:
-- Carlos Pizarro (Github)[https://github.com/CarlosPizarroMorales/sprint-m4]
-- Etzel Mencías	 (Github)[https://github.com/EtzelMV/Modulo4_Sprint]
-- Diego Paredes  (Github)[https://github.com/Diego-Paredes-Munoz/sprint-m4]
-- Ricardo Silva  (Github)[https://github.com/Ricardo-toor/-sprint-m4.git]
-- Mangel Tort    (Github)[https://github.com/MangelTort/sprint-m4]
+- Carlos Pizarro [Github][https://github.com/CarlosPizarroMorales/sprint-m4]
+- Etzel Mencías	 [Github][https://github.com/EtzelMV/Modulo4_Sprint]
+- Diego Paredes  [Github][https://github.com/Diego-Paredes-Munoz/sprint-m4]
+- Ricardo Silva  [Github][https://github.com/Ricardo-toor/-sprint-m4.git]
+- Mangel Tort    [Github][https://github.com/MangelTort/sprint-m4]
 
 ## Tema:
 Programación orientada a objetos en Java.
