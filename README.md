@@ -94,6 +94,8 @@ muchas empresas se encuentran en zonas donde no hay conexión de ese tipo.
 Contenedor, con 2 listas que considera esta clase. 
 - Se crea un menú principal con nueve opciones: ocho para las acciones indicadas en el listado anterior, y una opción para salir del programa. En caso de que se ingrese una opción incorrecta, se debe pedir nuevamente. El programa solo terminará una vez que ingrese la opción de salida.
 
+![img](./utils/screenshot.png)
+
 
 ## Sistema de gestión de la información: 
 	                                             
