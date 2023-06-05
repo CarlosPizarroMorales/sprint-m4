@@ -76,7 +76,6 @@ public class CreateCliente {
 		comuna = Common.doIt("createClienteComuna", false, 0, 50);
 		edadStr = Common.doIt("createClienteEdad", true, "edad");
 		edad = (edadStr.length() != 0) ? Integer.parseInt(edadStr) : 0;
-	
 		
 		// Lógica de creación de accidente
 		//CreateAccidente accidente;

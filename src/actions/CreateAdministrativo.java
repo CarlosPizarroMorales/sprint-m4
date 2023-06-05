@@ -1,6 +1,8 @@
 package actions;
 
 import java.time.LocalDate;
+
+import utils.Show;
 import utils.Validate;
 import entities.Administrativo;
 import main.Main;
@@ -26,14 +28,27 @@ public class CreateAdministrativo {
 	private static String expPrevia;
 	
 	public static void create() {
+		rut = Common.doIt("createRut", true, "rut");
+		
+		boolean isFounded = validateUser(rut);
+		System.out.println(isFounded);
+		
+		if(isFounded) {
+			Show.guide("usuarioYaExiste");
+			return;								
+		}
+		
 		nombres = Common.doIt("createNombres", true, 5, 30);
 		apellidos = Common.doIt("createApellidos", true, 5, 30);
 		fechaNacimiento = LocalDate.parse(Common.doIt("createFechaNac", true, "fecha"), Validate.FECHA_FORMAT);
-		rut = Common.doIt("createRut", true, "rut");
-		area = Common.doIt("createAdminArea", true, 5, 20);
-		expPrevia = Common.doIt("createAdminExpPrevia", false, 0, 100);
+		area = Common.doIt("createAdministrativoArea", true, 5, 20);
+		expPrevia = Common.doIt("createAdministrativoExperiencia", false, 0, 100);
 		
 	    Administrativo a = new Administrativo(nombres, apellidos, fechaNacimiento, rut, expPrevia, area);
 		Main.listados.almacenarAdministrativo(a);
+	}
+	
+	public static boolean validateUser(String rutCliente) {
+		return Main.listados.searchRutExists(rutCliente);
 	}
 }

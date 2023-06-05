@@ -34,28 +34,16 @@ public abstract class InstanciasTest {
 	public static Visita visita09 = new Visita("17:00", "Lugar 9", "Comentarios de la visita 9", revision09, "654123789", LocalDate.now());
 	public static Visita visita10 = new Visita("18:00", "Lugar 10", "Comentarios de la visita 10", revision10, "987321654", LocalDate.now());
 	//_________________ACCIDENTES__________________
-	Accidente acc01 = new Accidente("123456789", LocalDate.of(2023, 5, 10), "09:30", "Calle Principal", "Conducción distraída", "Lesiones leves");
-	Accidente acc02 = new Accidente("987654321", LocalDate.of(2023, 6, 1), "14:15", "Avenida Central", "Exceso de velocidad", "Daños materiales");
-	Accidente acc03 = new Accidente("456789123", LocalDate.of(2023, 4, 20), "18:45", "Calle Secundaria", "Falla mecánica", "Lesiones graves");
-	Accidente acc04 = new Accidente("789123456", LocalDate.of(2023, 3, 5), "11:00", "Carretera Principal", "Conducción bajo los efectos del alcohol", "Lesiones graves");
-	Accidente acc05 = new Accidente("321654987", LocalDate.of(2023, 2, 15), "16:30", "Avenida Norte", "Falta de señalización", "Daños materiales");
-	Accidente acc06 = new Accidente("654987321", LocalDate.of(2023, 1, 10), "08:45", "Calle Este", "Exceso de velocidad", "Daños materiales");
-	Accidente acc07 = new Accidente("987321654", LocalDate.of(2023, 6, 3), "20:00", "Calle Oeste", "Falla mecánica", "Lesiones leves");
-	Accidente acc08 = new Accidente("123789456", LocalDate.of(2023, 5, 25), "13:15", "Avenida Sur", "Conducción distraída", "Daños materiales");
-	Accidente acc09 = new Accidente("456123789", LocalDate.of(2023, 4, 8), "10:30", "Carretera Secundaria", "Falta de señalización", "Lesiones leves");
-	Accidente acc10 = new Accidente("789456123", LocalDate.of(2023, 3, 18), "17:45", "Avenida Este", "Conducción bajo los efectos de drogas", "Lesiones graves");
-	//__________________CLIENTE____________________
-	// Crear 10 instancias de clientes
-    public static Cliente cl01 = new Cliente("Juan", "Pérez", LocalDate.of(1990, 5, 15), "12345678-9", "Calle 123", "Santiago", "+56912345678", 33, "AFP Provida", 1, new Visita(), new Accidente(), new Capacitacion());
-    public static Cliente cl02 = new Cliente("María", "López", LocalDate.of(1985, 10, 20), "98765432-1", "Avenida 456", "Valparaíso", "+56998765432", 38, "AFP Cuprum", 2, new Visita(), new Accidente(), new Capacitacion());
-    public static Cliente cl03 = new Cliente("Pedro", "González", LocalDate.of(1995, 2, 8), "23456789-0", "Calle 789", "Concepción", "+56923456789", 28, "AFP Modelo", 1, new Visita(), new Accidente(), new Capacitacion());
-    public static Cliente cl04 = new Cliente("Carolina", "Sánchez", LocalDate.of(1983, 7, 12), "34567890-1", "Avenida 1234", "La Serena", "+56934567890", 40, "AFP Habitat", 2, new Visita(), new Accidente(), new Capacitacion());
-    public static Cliente cl05 = new Cliente("Andrés", "Torres", LocalDate.of(1998, 9, 25), "45678901-2", "Calle 5678", "Rancagua", "+56945678901", 25, "AFP PlanVital", 1, new Visita(), new Accidente(), new Capacitacion());
-    public static Cliente cl06 = new Cliente("Laura", "Martínez", LocalDate.of(1992, 12, 2), "56789012-3", "Avenida 5678", "Antofagasta", "+56956789012", 31, "AFP Capital", 2, new Visita(), new Accidente(), new Capacitacion());
-    public static Cliente cl07 = new Cliente("Roberto", "Ruiz", LocalDate.of(1980, 4, 30), "67890123-4", "Calle 910", "Viña del Mar", "+56967890123", 43, "AFP ProVida", 1, new Visita(), new Accidente(), new Capacitacion());
-    public static Cliente cl08 = new Cliente("Ana", "Gómez", LocalDate.of(1997, 6, 18), "78901234-5", "Avenida 8910", "Talca", "+56978901234", 26, "AFP Cuprum", 2, new Visita(), new Accidente(), new Capacitacion());
-    public static Cliente cl09 = new Cliente("Ricardo", "Hernández", LocalDate.of(1991, 8, 7), "89012345-6", "Calle 1112", "Arica", "+56989012345", 32, "AFP Habitat", 1, new Visita(), new Accidente(), new Capacitacion());
-    public static Cliente cl10 = new Cliente("Fernanda", "Torres", LocalDate.of(1987, 3, 14), "90123456-7", "Avenida 1314", "Puerto Montt", "+56990123456", 36, "AFP Modelo", 2, new Visita(), new Accidente(), new Capacitacion());
+	public static Accidente ac01 = new Accidente("123456789", LocalDate.of(2023, 5, 10), "09:30", "Calle Principal", "Conducción distraída", "Lesiones leves");
+	public static Accidente ac02 = new Accidente("987654321", LocalDate.of(2023, 6, 1), "14:15", "Avenida Central", "Exceso de velocidad", "Daños materiales");
+	public static Accidente ac03 = new Accidente("456789123", LocalDate.of(2023, 4, 20), "18:45", "Calle Secundaria", "Falla mecánica", "Lesiones graves");
+	public static Accidente ac04 = new Accidente("789123456", LocalDate.of(2023, 3, 5), "11:00", "Carretera Principal", "Conducción bajo los efectos del alcohol", "Lesiones graves");
+	public static Accidente ac05 = new Accidente("321654987", LocalDate.of(2023, 2, 15), "16:30", "Avenida Norte", "Falta de señalización", "Daños materiales");
+	public static Accidente ac06 = new Accidente("654987321", LocalDate.of(2023, 1, 10), "08:45", "Calle Este", "Exceso de velocidad", "Daños materiales");
+	public static Accidente ac07 = new Accidente("987321654", LocalDate.of(2023, 6, 3), "20:00", "Calle Oeste", "Falla mecánica", "Lesiones leves");
+	public static Accidente ac08 = new Accidente("123789456", LocalDate.of(2023, 5, 25), "13:15", "Avenida Sur", "Conducción distraída", "Daños materiales");
+	public static Accidente ac09 = new Accidente("456123789", LocalDate.of(2023, 4, 8), "10:30", "Carretera Secundaria", "Falta de señalización", "Lesiones leves");
+	public static Accidente ac10 = new Accidente("789456123", LocalDate.of(2023, 3, 18), "17:45", "Avenida Este", "Conducción bajo los efectos de drogas", "Lesiones graves");
 	//_______________ADMINISTRATIVO________________
 	public static Administrativo admin0 = new Administrativo("Isabel", "Ramírez", LocalDate.of(1997, 10, 7), "90123436-7", "Asistente de Recursos Humanos", "Recursos Humanos");
 	public static Administrativo admin1 = new Administrativo("Juan", "Pérez", LocalDate.of(1990, 5, 15), "12345678-3", "Asistente Administrativo", "Recursos Humanos");
@@ -80,7 +68,7 @@ public abstract class InstanciasTest {
 	public static Profesional p10 = new Profesional("Carolina", "Vargas", LocalDate.of(1994, 6, 28), "34367890-1", "Periodista", LocalDate.of(2020, 4, 1));
 	//________________CAPACITACION__________________
 	public static Capacitacion c01 = new Capacitacion("12345668-9", "Lunes", LocalTime.of(9, 0), LocalDate.of(2023, 6, 5), "Sala A", 2.5f, 20);
-	public static Capacitacion c11 = new Capacitacion("12345678-8", "Lunes", LocalTime.parse("00:12", Validate.HORA_FORMAT), LocalDate.parse("12/12/1965", Validate.FECHA_FORMAT), "Sala A", 2.5f, 20);
+	public static Capacitacion c10 = new Capacitacion("12345678-8", "Lunes", LocalTime.parse("00:12", Validate.HORA_FORMAT), LocalDate.parse("12/12/1965", Validate.FECHA_FORMAT), "Sala A", 2.5f, 20);
 	public static Capacitacion c02 = new Capacitacion("98765432-2", "Martes", LocalTime.of(14, 30), LocalDate.of(2023, 6, 6), "Sala B", 3.0f, 15);
 	public static Capacitacion c03 = new Capacitacion("45678912-3", "Miércoles", LocalTime.of(11, 0), LocalDate.of(2023, 6, 7), "Sala C", 1.5f, 10);
 	public static Capacitacion c04 = new Capacitacion("78912345-6", "Jueves", LocalTime.of(16, 0), LocalDate.of(2023, 6, 8), "Sala D", 4.0f, 30);
@@ -89,8 +77,18 @@ public abstract class InstanciasTest {
 	public static Capacitacion c07 = new Capacitacion("98732165-4", "Domingo", LocalTime.of(13, 0), LocalDate.of(2023, 6, 11), "Sala G", 2.0f, 12);
 	public static Capacitacion c08 = new Capacitacion("12378945-6", "Lunes", LocalTime.of(15, 30), LocalDate.of(2023, 6, 12), "Sala H", 4.5f, 28);
 	public static Capacitacion c09 = new Capacitacion("45612378-9", "Martes", LocalTime.of(12, 0), LocalDate.of(2023, 6, 13), "Sala I", 1.0f, 8);
-	public static Capacitacion c10 = new Capacitacion("78945612-3", "Miércoles", LocalTime.of(17, 30), LocalDate.of(2023, 6, 14), "Sala J", 3.5f, 22);
-	
+	//__________________CLIENTE____________________
+	public static Cliente cl01 = new Cliente("Juan", "Pérez", LocalDate.of(1990, 5, 15), 		"12345668-9", "Calle 123", "Santiago", "+56912345678", 33, "AFP Provida", 1, 			visita01, ac01, c01);
+	public static Cliente cl02 = new Cliente("María", "López", LocalDate.of(1985, 10, 20), 		"12345678-8", "Avenida 456", "Valparaíso", "+56998765432", 38, "AFP Cuprum", 2, 		visita02, ac02, c02);
+	public static Cliente cl03 = new Cliente("Pedro", "González", LocalDate.of(1995, 2, 8), 	"98765432-2", "Calle 789", "Concepción", "+56923456789", 28, "AFP Modelo", 1, 		visita03, ac03, c03);
+	public static Cliente cl04 = new Cliente("Carolina", "Sánchez", LocalDate.of(1983, 7, 12), 	"45678912-3", "Avenida 1234", "La Serena", "+56934567890", 40, "AFP Habitat", 2, visita04, ac04, c04);
+	public static Cliente cl05 = new Cliente("Andrés", "Torres", LocalDate.of(1998, 9, 25), 	"78912345-6", "Calle 5678", "Rancagua", "+56945678901", 25, "AFP PlanVital", 1, 	visita05, ac05, c05);
+	public static Cliente cl06 = new Cliente("Laura", "Martínez", LocalDate.of(1992, 12, 2), 	"32165498-7", "Avenida 5678", "Antofagasta", "+56956789012", 31, "AFP Capital", 2, visita06, ac06, c06);
+	public static Cliente cl07 = new Cliente("Roberto", "Ruiz", LocalDate.of(1980, 4, 30), 		"65498732-1", "Calle 910", "Viña del Mar", "+56967890123", 43, "AFP ProVida", 1, 	visita07, ac07, c07);
+	public static Cliente cl08 = new Cliente("Ana", "Gómez", LocalDate.of(1997, 6, 18), 		"98732165-4", "Avenida 8910", "Talca", "+56978901234", 26, "AFP Cuprum", 2, 			visita08, ac08, c08);
+	public static Cliente cl09 = new Cliente("Ricardo", "Hernández", LocalDate.of(1991, 8, 7), 	"12378945-6", "Calle 1112", "Arica", "+56989012345", 32, "AFP Habitat", 1, 		visita09, ac09, c09);
+	public static Cliente cl10 = new Cliente("Fernanda", "Torres", LocalDate.of(1987, 3, 14), 	"45612378-9", "Avenida 1314", "Puerto Montt", "+56990123456", 36, "AFP Modelo", 2,visita10, ac10, c10);
+	                                                                                             
 	/*
 	 * Las instancias creadas como campos de la clase ahora son utilizadas
 	 * para llenar los campos Contenedor.usuarios y Contenedor.capacitaciones

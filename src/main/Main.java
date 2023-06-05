@@ -40,16 +40,10 @@ public class Main {
 //	private static int exit;
 	
 	public static Contenedor listados = new Contenedor();		// Crea objeto que almacena instancias
-	public static Cliente cliente = new Cliente();
 	
 	public static void main(String[] args) {
 		InstanciasTest.cargarData();
 		
-		Menu.drawMenu(0);									// pinta Menu
+		Menu.drawMenu(0);										// pinta Menu
 	}
-	
-//	public static void start() {
-//	}
-	
-
 }

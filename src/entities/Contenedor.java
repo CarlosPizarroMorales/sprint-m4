@@ -48,7 +48,17 @@ public class Contenedor {
 		} else {
 			return false;
 		}
-	}	
+	}
+	
+	public boolean searchRutExists(String rutUser) {
+		boolean isFounded = false;
+		
+		for(Usuario u: usuarios) {
+			if (u.getRun().equals(rutUser)) isFounded = true;
+		}
+		return isFounded;
+	}
+	
 	
 	/*
 	 * Esta función recibe una String que 
@@ -74,8 +84,6 @@ public class Contenedor {
 		}
 	}
 	
-	
-	
 	public void listarUsuariosTipo(String category){
 		int count = 0;
 		
@@ -90,15 +98,18 @@ public class Contenedor {
 		if (count == 0 ) Show.guide("usuarioNoExiste");
 	}
 	
-	
-	
+	/*
+	 * Método utilizado para mostrar todas las 
+	 * capacitaciones y los datos del cliente asociados.  
+	 */
 	public void listarCapacitaciones(){
 		for(Capacitacion c : capacitaciones){
 			System.out.println(c.toString());
-			// var =  c.getRutCliente()
-			// loopear usuarios 
-				// coincidir var.equals(usuario.getRun())
-					// SI? u.analizarUsuario();
+			String rutInCapac = c.getRutCliente();
+			System.out.println("\n\t *** Asociada al cliente *** ");
+			for (Usuario u: usuarios) {
+				if(u.getRun().equals(rutInCapac))  u.analizarUsuario();
+			}
 		}
 	}
 }

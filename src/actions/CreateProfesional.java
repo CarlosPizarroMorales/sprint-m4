@@ -35,10 +35,19 @@ public class CreateProfesional {
 	public static void create() {
 		Show.guide("createGeneral");
 		
+		rut = Common.doIt("createRut", true, "rut");
+
+		boolean isFounded = validateUser(rut);
+		System.out.println(isFounded);
+		
+		if(isFounded) {
+			Show.guide("usuarioYaExiste");
+			return;								
+		}
+		
 		nombres = Common.doIt("createNombres", true, 5, 30);
 		apellidos = Common.doIt("createApellidos", true, 5, 30);
 		fechaNacimiento = LocalDate.parse(Common.doIt("createFechaNac", true, "fecha"), Validate.FECHA_FORMAT);		
-		rut = Common.doIt("createRut", true, "rut");
 		
 		/*
 		 * se utiliza una variable intermedia de tipo String para los casos de 
@@ -49,11 +58,15 @@ public class CreateProfesional {
 		 * String devuelta y se asigna un valor null o 0 al campo no obligatorio
 		 * cumpliendo con la lógica de negocio.  
 		 */
-		fecIngStr = Common.doIt("createIngreso", false, "fecha");
+		fecIngStr = Common.doIt("createProfesionalIngreso", false, "fecha");
 		fechaIngreso = (fecIngStr.length() != 0) ? LocalDate.parse(fecIngStr, Validate.FECHA_FORMAT) : null;
-		titulo = Common.doIt("createTitulo", true, 10, 50);
+		titulo = Common.doIt("createProfesionalTitulo", true, 10, 50);
 		
 		Profesional p = new Profesional(nombres, apellidos, fechaNacimiento, rut, titulo, fechaIngreso);
 		Main.listados.almacenarProfesional(p);
+	}
+	
+	public static boolean validateUser(String rutCliente) {
+		return Main.listados.searchRutExists(rutCliente);
 	}
 }

@@ -38,6 +38,7 @@ public class Cliente extends Usuario {
 		return "\n\tNombre completo del cliente: " + nombres + " " + apellidos;
 	}
 	
+	// TODO que el método solo retorne la String. 
 	public void obtenerSistemaSalud(int option) {
 		switch (option) {
 			case 1:
@@ -82,8 +83,8 @@ public class Cliente extends Usuario {
 		return sistemaSalud;
 	}
 
-	public ArrayList<Visita> getVisita() {
-		return visita;
+	public ArrayList<Visita> getVisitas() {
+		return visita;						// esto solo retorna el objeto.
 	}
 
 	public ArrayList<Accidente> getAccidente() {
